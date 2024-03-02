@@ -17,25 +17,33 @@ module alu_structural #(
 
 wire [8*WIDTH-1:0] t;
 
-alu_and #(.WIDTH(WIDTH)) i_and (
+alu_and #(
+	.WIDTH(WIDTH)
+) i_and (
 	.x (x),
 	.y (y),
 	.z (t[WIDTH-1:0])
 );
 
-alu_or #(.WIDTH(WIDTH)) i_or (
+alu_or #(
+	.WIDTH (WIDTH)
+) i_or (
 	.x (x),
 	.y (y),
 	.z (t[2*WIDTH-1:WIDTH])
 );
 
-alu_xor #(.WIDTH(WIDTH)) i_xor (
+alu_xor #(
+	.WIDTH (WIDTH)
+) i_xor (
 	.x (x),
 	.y (y),
 	.z (t[3*WIDTH-1:2*WIDTH])
 );
 
-alu_adder #(.WIDTH(WIDTH)) i_adder (
+alu_adder #(
+	.WIDTH (WIDTH)
+) i_adder (
 	.x         (x),
 	.y         (y),
 	.carry_in  (carry_in),
@@ -43,35 +51,43 @@ alu_adder #(.WIDTH(WIDTH)) i_adder (
 	.carry_out (overflow)
 );
 
-alu_subtractor #(.WIDTH(WIDTH)) i_subtractor (
+alu_subtractor #(
+	.WIDTH (WIDTH)
+) i_subtractor (
 	.x (x),
 	.y (y),
 	.z (t[5*WIDTH-1:4*WIDTH])
 );
 
-alu_left_shifter #(.WIDTH(WIDTH)) i_left_shifter (
-	.x(x),
-	.y(y),
-	.shamt(shamt),
-	.z(t[6*WIDTH-1:5*WIDTH])
+alu_left_shifter #(
+	.WIDTH (WIDTH)
+) i_left_shifter (
+	.x     (x),
+	.y     (y),
+	.shamt (shamt),
+	.z     (t[6*WIDTH-1:5*WIDTH])
 );
 
-alu_right_shifter #(.WIDTH(WIDTH)) i_right_shifter (
+alu_right_shifter #(
+	.WIDTH (WIDTH)
+) i_right_shifter (
 	.x     (x),
 	.y     (y),
 	.shamt (shamt),
 	.z     (t[7*WIDTH-1:6*WIDTH])
 );
 
-alu_slt #(.WIDTH(WIDTH)) i_slt (
+alu_slt #(
+	.WIDTH (WIDTH)
+) i_slt (
 	.x (x),
 	.y (y),
 	.z (t[8*WIDTH-1:7*WIDTH])
 );
 
 alu_mux #(
-	.DATA_WIDTH(WIDTH),
-	.SEL_WIDTH(OPERATION) 
+	.DATA_WIDTH (WIDTH),
+	.SEL_WIDTH  (OPERATION) 
 ) i_mux (
 	.d (t),
 	.s (operation),
