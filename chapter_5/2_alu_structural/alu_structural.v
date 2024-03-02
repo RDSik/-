@@ -1,10 +1,8 @@
 module alu_structural #(
-	
 	parameter OPERATION = 3,
 	parameter WIDTH     = 8,
 	parameter SHIFT     = 3,
-)
-(
+) (
 	input [OPERATION-1:0] operation,	
 	input [WIDTH-1:0]     x, 
 	input [WIDTH-1:0]     y, 
