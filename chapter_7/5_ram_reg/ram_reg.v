@@ -1,5 +1,4 @@
-module ram_reg
-#(
+module ram_reg #(
 	parameter DATA_WIDTH = 8,
 	parameter ADDR_WIDTH = 16
 ) (

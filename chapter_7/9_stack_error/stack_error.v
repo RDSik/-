@@ -1,6 +1,6 @@
 module stack_error #(
 	parameter DATA_WIDTH = 8, 
-	parameter PTR_WIDTH = 2
+	parameter PTR_WIDTH  = 2
 ) (
 	input                       clk,
 	input                       rst,

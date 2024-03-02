@@ -1,15 +1,18 @@
-module register
-#(parameter WIDTH = 32)
-(
-	input clk, en,
-	input [WIDTH-1:0] d,
+module register #(
+	parameter WIDTH = 32
+) (
+	input                  clk, 
+	input                  en,
+	input      [WIDTH-1:0] d,
 	output reg [WIDTH-1:0] q
 );
-always @(posedge clk)
-	begin
-		if(en) begin
-			q <= d; end
+
+always @(posedge clk) begin
+	if (en) begin
+		q <= d;
 	end
+end
+
 endmodule
 
 module register_file

@@ -1,5 +1,5 @@
 module shift_register_en #(
-	parameter WIDTH=8
+	parameter WIDTH = 8
 ) (
 	input                  clk, 
 	input                  en, 

@@ -1,6 +1,6 @@
 module fifo #(
 	parameter DATA_WIDTH = 8, 
-	parameter FIFO_SIZE = 2
+	parameter FIFO_SIZE  = 2
 ) (
 	input [DATA_WIDTH-1:0]      write_data,	
 	input                       clk,
@@ -18,21 +18,21 @@ reg [FIFO_SIZE-1:0] read_pointer;
 
 always @(posedge clk or negedge rst) begin
 	if (!rst) begin
-		read_data     <= 0;
+		read_data <= 0;
 		write_pointer <= 0;
-		read_pointer  <= 0; 
+		read_pointer <= 0; 
 	end
 	else if (push & !full) begin
 		fifo[write_pointer] <= write_data;
-		write_pointer       <= write_pointer + 1; 
+		write_pointer <= write_pointer + 1; 
 	end
 	else if (pop & !empty) begin
-		read_data    <= fifo[read_pointer];
+		read_data <= fifo[read_pointer];
 		read_pointer <= read_pointer + 1; 
 	end
 	else begin
 		fifo[write_pointer] <= write_data;
-		read_data           <= fifo[read_pointer]; 
+		read_data <= fifo[read_pointer]; 
 	end
 end
 
@@ -43,7 +43,7 @@ always @(posedge clk) begin
 		empty <= 1;
 	else begin
 		empty <= 0;
-		full  <= 0; 
+		full <= 0; 
 	end
 end
 
