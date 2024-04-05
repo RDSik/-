@@ -58,7 +58,8 @@ alu_subtractor #(
 );
 
 alu_left_shifter #(
-	.WIDTH (WIDTH)
+	.WIDTH (WIDTH),
+	.SHIFT (SHIFT)
 ) i_left_shifter (
 	.x     (x),
 	.y     (y),
@@ -67,7 +68,8 @@ alu_left_shifter #(
 );
 
 alu_right_shifter #(
-	.WIDTH (WIDTH)
+	.WIDTH (WIDTH),
+	.SHIFT (SHIFT)
 ) i_right_shifter (
 	.x     (x),
 	.y     (y),
