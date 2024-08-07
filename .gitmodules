@@ -1,0 +1,3 @@
+[submodule "chapter_11/schoolRISCV"]
+	path = chapter_11/schoolRISCV
+	url = https://github.com/RDSik/schoolRISCV.git
